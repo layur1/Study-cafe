@@ -1,0 +1,38 @@
+.to-do-list{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+h1{
+  font-size: 4rem;
+}
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color:blanchedalmond;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.add-button{
+  background-color: #fbd870bd;
+}
+.add-button:hover{
+  background-color: hsl(45, 95%, 71%);
+}
+.delete-button{
+  background-color: #e64c0abd;
+}
+.delete-button:hover{
+  background-color: #e64c0abd;
+}
+.move-button{
+  background-color: #772705bd;
+}
+.move-button:hover{
+  background-color: #772705bd;
+}
+

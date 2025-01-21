@@ -1,0 +1,99 @@
+/* Outer container for the navigation bar */
+/* Outer container for the navigation bar */
+.outer-div {
+  width: 100vw; /* Ensure it spans the full width of the viewport */
+  height: 100px; /* Set a fixed height */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(135deg, hsl(211, 77%, 10%), hsl(168, 76%, 42%)); /* Apply transparent gradient */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box; /* Include padding in the element's total width calculation */
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+  .outer-div {
+    padding-left: 10px;
+    padding-right: 10px; /* Adjust padding on smaller screens */
+  }
+}
+
+
+/* Flex container for the image and text items */
+.inner-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ensure it takes available space */
+}
+
+/* Image container */
+.image-container {
+  width: auto; /* Adjust the width based on the content */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%; /* Allow the image to scale */
+  height: 60px; /* Maintain the image height */
+}
+
+/* Text container holding all text items */
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 2; /* Allow text items to take up the remaining space */
+  gap: 30px; /* Space between the text items */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Each text item block */
+.text-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  height: 38px;
+}
+
+/* Text styling for the content */
+.text-content {
+  text-align: center;
+  color: white;
+  font-size: 24px; /* Reduced font size for better scaling */
+  font-family: "Orienta", sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .outer-div {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .text-container {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .text-item {
+    width: 100%; /* Ensure the text items take full width on small screens */
+    padding: 5px 0;
+  }
+
+  .text-content {
+    font-size: 18px; /* Reduce font size for smaller devices */
+  }
+}

@@ -1,0 +1,26 @@
+.navbar-button {
+  padding: 16px;
+  background: #B26B37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.navbar-button-text {
+  color: white;
+  font-size: 24px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.navbar-button:hover {
+  background-color: #8e4d29; /* Darker shade for hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Clicked state */
+.navbar-button.clicked {
+  background-color: #6e3b20; /* Even darker shade for clicked state */
+  transform: scale(0.95); /* Shrink slightly on click */
+}
