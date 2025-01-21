@@ -14,16 +14,16 @@ const App = () => {
         </div>
         <div className="text-container">
           <div className="text-item">
-            <div className="text-content">Sample</div>
+            <div className="text-content">Home</div>
           </div>
           <div className="text-item">
-            <div className="text-content">Sample</div>
+            <div className="text-content">Book</div>
           </div>
           <div className="text-item">
-            <div className="text-content">Sample</div>
+            <div className="text-content">Online mode</div>
           </div>
           <div className="text-item">
-            <div className="text-content">Sample</div>
+            <div className="text-content">About Us</div>
           </div>
         </div>
       </div>

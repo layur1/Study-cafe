@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box; /* Include padding in the element's total width calculation */
+  
 }
 
 /* Ensure responsiveness on smaller screens */
