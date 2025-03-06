@@ -1,0 +1,177 @@
+/* Outer container for the navigation bar */
+.outer-div {
+  width: 100vw; /* Full width of the viewport */
+  height: 70px; /* Fixed height */
+  padding: 10px 20px;/* Top/bottom and left/right padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  position: fixed; /* Keep the navbar fixed */
+  top: 0; /* Fix it to the top of the viewport */
+  left: 0;
+  z-index: 1000; /* Ensure it stays above all elements */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8); /* Ensure background is visible on all screen sizes */
+}
+
+/* Transparent navbar */
+.outer-div.transparent {
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent */
+  box-shadow: none;
+}
+
+/* Solid background when scrolled */
+.outer-div.scrolled {
+  background-color: hsl(211, 77%, 10%); /* Solid color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for distinction */
+}
+
+/* Flex container for the image and text items */
+.inner-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo section */
+.image-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.image {
+  height: 50px; /* Adjust the height of the logo */
+  object-fit: contain;
+}
+
+/* Hamburger menu icon */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Menu items section */
+.text-container {
+  display: flex;
+  justify-content: center; /* Center the menu items */
+  align-items: center;
+  gap: 30px; /* Space between the menu items */
+  flex-grow: 1; /* Allow it to take the remaining space */
+}
+
+/* Menu item styles */
+.text-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  height: 38px;
+  cursor: pointer;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect for the text content */
+.text-item:hover .text-content {
+  color: hsl(168, 76%, 60%); /* Change text color on hover */
+}
+
+.text-item:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(168, 76%, 60%); /* Underline effect */
+  transition: width 0.3s ease;
+}
+
+.text-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(168, 76%, 60%);
+  transition: width 0.3s ease;
+}
+
+/* Text content styles */
+.text-content {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Orienta", sans-serif;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+    display: none; /* Hide logo on small screens */
+  }
+
+  .text-container {
+    display: none; /* Hide menu items by default */
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; /* Full width */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+  }
+
+  .text-item {
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .text-content {
+    font-size: 18px;
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu */
+    
+  }
+
+  /* Open the menu when active */
+  .text-container.open {
+    display: flex;
+  }
+
+  /* Animation for hamburger to cross when clicked */
+  .hamburger-menu.open div:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+  }
+  
+  .hamburger-menu.open div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open div:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+  }
+}

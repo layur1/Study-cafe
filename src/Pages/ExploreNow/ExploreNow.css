@@ -1,0 +1,150 @@
+/* ExploreNow.css */
+
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.explore-now-container {
+  min-height: 100vh; /* Full height with room for footer */
+  width: 100vw; /* Full desktop width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes footer to bottom */
+  align-items: center;
+  padding: 80px 40px 40px; /* Top for navbar, sides, bottom */
+  background: linear-gradient(135deg, #061A2F, #86ddcb, #1ABC9C); /* Gradient background */
+  font-family: 'Orienta', sans-serif; /* Your font */
+}
+
+/* Title */
+.explore-title {
+  font-size: 3rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery layout */
+.gallery {
+  display: grid;
+  width: 100%;
+  max-width: 1200px; /* Limits width for large screens */
+  gap: 40px; /* Space between cards */
+  grid-template-columns: repeat(auto-fit, 300px); /* Responsive columns */
+  justify-content: center;
+}
+
+/* Individual card */
+.gallery-card {
+  width: 300px;
+  height: 350px; /* Fixed height for card */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Simple hover effect */
+}
+
+/* Hover effect for card */
+.gallery-card:hover {
+  transform: translateY(-10px); /* Lift up on hover */
+}
+
+/* Card image */
+.card-image {
+  width: 100%;
+  height: 250px; /* Image takes most of the card height */
+  object-fit: cover; /* Ensures image fills space without distortion */
+  display: block;
+}
+
+/* Caption below image */
+.gallery-card figcaption {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1ABC9C; /* Your theme color */
+  font-family: 'Orienta', sans-serif;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+}
+
+/* Bold text in caption */
+.gallery-card figcaption strong {
+  display: block;
+  color: #86ddcb; /* Lighter accent */
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .explore-now-container {
+    padding: 80px 20px 20px;
+  }
+
+  .gallery {
+    max-width: 900px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-now-container {
+    padding: 70px 15px 15px;
+  }
+
+  .explore-title {
+    font-size: 2.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery-card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .gallery-card figcaption {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-now-container {
+    padding: 60px 10px 10px;
+  }
+
+  .explore-title {
+    font-size: 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* One column on small screens */
+    gap: 15px;
+  }
+
+  .gallery-card {
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+  }
+
+  .card-image {
+    height: 250px;
+  }
+
+  .gallery-card figcaption {
+    font-size: 1.2rem;
+  }
+}
